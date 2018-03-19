@@ -1,0 +1,109 @@
+body {
+    height: 3000px;
+}
+
+#work_excel, #work_excel3{
+    margin: 20px auto;
+    width: 800px;
+    height: 180px;
+    /*text-align: center;*/
+    font-family: "Microsoft Yahei";
+    color: #4A4A4A;
+    box-shadow: 2px 4px 5px #bdbdbd;
+    border-width: 1px 0 0 1px;
+    border-color: #E6E4E0;
+    border-style: solid;
+    /*float: left;*/
+    /*margin-right: 20px;*/
+    -moz-user-select: none;
+    /*火狐*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -ms-user-select: none;
+    /*IE10*/
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    font-size: 10px;
+}
+
+#div_upload {
+    width: 100%;
+}
+
+#div_upload1, #div_upload2, #div_upload3 {
+    width: 33%;
+    float: left;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#div_upload1:hover, #div_upload2:hover, #div_upload3:hover {
+    overflow: visible;
+    word-break: normal;
+    white-space: normal;
+}
+
+#work_excel2 {
+    margin: 20px auto;
+    width: 800px;
+    font-size: 10px;
+
+}
+
+#checkbox_list1, #checkbox_list2 {
+    width: 18%;
+    float: left;
+    box-shadow: 2px 4px 5px #bdbdbd;
+    border-width: 1px 0 0 1px;
+    margin-right: 2%;
+}
+
+#checkbox_list3 {
+    width: 19%;
+    float: left;
+    box-shadow: 2px 4px 5px #bdbdbd;
+    border-width: 1px 0 0 1px;
+    margin-right: 1%;
+}
+
+#checkbox_list5 {
+    width: 19%;
+    float: left;
+    box-shadow: 2px 4px 5px #bdbdbd;
+    border-width: 1px 0 0 1px;
+    margin-right: 1%;
+}
+
+#checkbox_list4 {
+    width: 20%;
+    float: left;
+    box-shadow: 2px 4px 5px #bdbdbd;
+    border-width: 1px 0 0 1px;
+}
+
+.check_file {
+    width: 100%;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check_file:hover {
+    overflow: visible;
+    word-break: normal;
+    white-space: normal;
+}
+
+
+#work_excel3_left {
+    width: 25%;
+    float: left;
+}
+
+#work_excel3_right {
+    width: 74%;
+    float: right;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>理财范考勤核对平台</title>
+
+  <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+
+  <script type="text/javascript" src="/static/js/simple-calendar.js"></script>
+  <link rel="stylesheet" href="/static/css/simple-calendar.css"/>
+  <script type="text/javascript" src="/static/js/others.js"></script>
+  <link rel="stylesheet" href="/static/css/others.css"/>
+
+</head>
+<body>
+<div id="container" style="float:none;margin: 0px auto;"></div>
+<script>
+  var myCalendar = new SimpleCalendar('#container');
+  myCalendar.updateSize('800px', '500px');
+</script>
+
+<div id="work_excel3">
+  <div id="work_excel3_left">
+    <p>已选考勤文件:<input type="text" id="kaoqin" value="" disabled="disabled" ></p>
+    <p>已选请假文件:<input type="text" id="qingjia" value="" disabled="disabled" ></p>
+    <p>已选加班文件:<input type="text" id="jiaban" value="" disabled="disabled" ></p>
+    <p><input type="button" id="report" value="生成报告"></p>
+  </div>
+  <div id="work_excel3_right">
+  <img src="/static/img/wait.gif" style="display:none;float:left;" height="120" width="120" id="imgWait4"/>
+  </div>
+
+</div>
+<div id="work_excel">
+  <div id="div_upload">
+    <div id="div_upload1">
+      <form>
+        上传考勤文件:<br><input type="file" id="file1" multiple="false" name="upload_file"
+                      accept=".xls, .xlsm, .xlsx, .txt"/><br/>
+        <input type="reset" value="重置"> <input type="button" id="upload1" value="提交">
+      </form>
+      <img src="/static/img/wait.gif" style="display:none;float:left;" height="120" width="120" id="imgWait1"/>
+    </div>
+    <div id="div_upload2">
+      <form>
+        上传请假文件:<br><input type="file" id="file2" multiple="false" name="upload_file2"
+                      accept=".xls, .xlsm, .xlsx, .txt"/><br/>
+        <input type="reset" value="重置"> <input type="button" id="upload2" value="提交">
+      </form>
+      <img src="/static/img/wait.gif" style="display:none;float:left;" height="120" width="120" id="imgWait2"/>
+    </div>
+    <div id="div_upload3">
+      <form>
+        上传加班文件:<br><input type="file" id="file3" multiple="false" name="upload_file3"
+                      accept=".xls, .xlsm, .xlsx, .txt"/><br/>
+        <input type="reset" value="重置"> <input type="button" id="upload3" value="提交">
+      </form>
+      <img src="/static/img/wait.gif" style="display:none;float:left;" height="120" width="120" id="imgWait3"/>
+    </div>
+  </div>
+</div>
+<div id="work_excel2">
+  <div id="checkbox_list1">
+    <input type="button" id="all1" name="11" value = "全选"/>
+    <input type="button" id="del1" value = "删除"/>
+    <p>考勤文件列表:</p>
+    <br>
+    <div id = "dir1">
+     </div>
+
+  </div>
+
+  <div id="checkbox_list2">
+    <input type="button" id="all2" value = "全选"/>
+    <input type="button" id="del2" value = "删除"/>
+    <p>请假文件列表:</p>
+    <br>
+    <div id = "dir2"></div>
+  </div>
+
+  <div id="checkbox_list3">
+    <input type="button" id="all3" value = "全选"/>
+    <input type="button" id="del3" value = "删除"/>
+    <p>加班文件列表:</p>
+    <br>
+    <div id = "dir3"></div>
+  </div>
+
+  <div id="checkbox_list5">
+
+    <input type="button" id="all5" name="11" value = "全选"/>
+    <input type="button" id="del5" value = "删除"/>
+    <input type="button" id="download5" value = "下载"/>
+    <p>  下载考勤汇总报告:</p>
+    <br>
+    <div id="dir5"></div>
+  </div>
+
+  <div id="checkbox_list4">
+    <input type="button" id="all4" value = "全选"/>
+    <input type="button" id="del4" value = "删除"/>
+    <input type="button" id="add4" value = "新增"/>
+    <p>员工明细列表:</p>
+    <input type="button" id="add4_hidden" value="隐藏" class = "employe" style="display:none;"/>
+    <input type="button" id="upload4" value="提交" class = "employe" style="display:none;"/>
+    <div class = "employe" style="display:none;">编号:<input type="text" name="emp_id" value="" onfocus="this.placeholder=''" onblur="this.placeholder='指纹编号'"></div>
+    <div class = "employe" style="display:none;">姓名:<input type="text" name="emp_name" value="" onfocus="this.placeholder=''" onblur="this.placeholder='员工姓名'"></div>
+    <div class = "employe" style="display:none;">部门:<input type="text" name="emp_dept" value="" onfocus="this.placeholder=''" onblur="this.placeholder='所属部门'"></div>
+    <div class = "employe" style="display:none;">邮箱:<input type="text"  name="emp_email" value="" onfocus="this.placeholder=''" onblur="this.placeholder='xxx@licaifan.com'"></div>
+    <br>
+    <div id = "dir4"></div>
+
+  </div>
+</div>
+</body>
+</html>
+
