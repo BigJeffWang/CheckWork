@@ -370,19 +370,22 @@ def get_diff_datetime(datetime_end, datetime_bigen):
 
 
 def get_work_time(work_day):
-    datetime_hour_9 = get_datetime(work_day + " 09:01:00")
-    datetime_hour_10 = get_datetime(work_day + " 10:01:00")
+    datetime_hour_9 = get_datetime(work_day + " 09:00:00")
+    datetime_hour_10 = get_datetime(work_day + " 10:00:00")
     datetime_hour_18 = get_datetime(work_day + " 18:00:00")
     datetime_hour_19 = get_datetime(work_day + " 19:00:00")
     datetime_hour_12 = get_datetime(work_day + " 12:00:00")
     datetime_hour_13 = get_datetime(work_day + " 13:00:00")
     return datetime_hour_9, datetime_hour_10, datetime_hour_18, datetime_hour_19, datetime_hour_12, datetime_hour_13
 
+
 def get_chidao_work_time(work_day):
     datetime_hour_9_30 = get_datetime(work_day + " 09:30:00")
     datetime_hour_10_30 = get_datetime(work_day + " 10:30:00")
     datetime_hour_10 = get_datetime(work_day + " 10:00:00")
-    return datetime_hour_9_30, datetime_hour_10_30, datetime_hour_10
+    datetime_hour_10_01 = get_datetime(work_day + " 10:01:00")
+    datetime_hour_09_01 = get_datetime(work_day + " 09:01:00")
+    return datetime_hour_9_30, datetime_hour_10_30, datetime_hour_10, datetime_hour_10_01, datetime_hour_09_01
 
 
 def get_0_24point_time(work_day):
@@ -677,12 +680,12 @@ def get_report(request_data):
                 if v[work_day]["chidao"] and not v[work_day]["zaotui"]:
                     if float(v[work_day]["chidao"]) <= float(1):
                         begin_datetime = v[work_day]["begin_time_datetime"]
-                        datetime_hour_9_30, datetime_hour_10_30, datetime_hour_10 = get_chidao_work_time(work_day)
-                        if begin_datetime <= datetime_hour_9_30:
+                        datetime_hour_9_30, datetime_hour_10_30, datetime_hour_10, datetime_hour_10_01, datetime_hour_09_01 = get_chidao_work_time(work_day)
+                        if datetime_hour_09_01 <= begin_datetime <= datetime_hour_9_30:
                             kaoqin_chidao_dict[kaoqin_name] = {
                                 work_day: v[work_day]
                             }
-                        elif datetime_hour_10 <= begin_datetime <= datetime_hour_10_30:
+                        elif datetime_hour_10_01 <= begin_datetime <= datetime_hour_10_30:
                             kaoqin_chidao_dict[kaoqin_name] = {
                                 work_day: v[work_day]
                             }
